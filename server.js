@@ -89,7 +89,7 @@ app.get("/", function(req, res) {
 
 // Reserve
 app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "Reserve.html"));
 });
 
 // Tables // Displays all reservation
