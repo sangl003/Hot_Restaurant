@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 	<div class="container">
 
 		<div class="jumbotron">
-			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
+			<h1 class="text-center"><img src="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif" style="width: 100px; height: 100px;" alt="Fire Giphy"> Hot Restaurant <img src="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif" style="width: 100px; height: 100px;" alt="Fire Giphy"></h1>
 			<hr>
 			<h2 class="text-center">Current Reservations and Waiting List</h2>
 			<br>
@@ -26,13 +26,14 @@
 				<a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
 			</div>
 		</div>
-
+		
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Current Reservations</h3>
 			</div>
 			<div class="panel-body" id="tableSelection"></div>
-		</div>
+    </div>
+    
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -40,8 +41,7 @@
 			</div>
 			<div class="panel-body" id="waitlistSelection"></div>
 		</div>
-
-
+		
 	</div>
 
 	<footer class="footer">
@@ -52,32 +52,32 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			// get reservation and waitlist data
+				// get reservation and waitlist data
 
-			$.get(`api/reservations`)
-				.then((data) => {
-					if (data && data.length) {
-						for (var i = 0; i < data.length; i++) {
-							var tableNum = i + 1;
-							var person = data[i];
+				$.get(`api/reservations`)
+					.then((data) => {
+						if (data && data.length) {
+							for (var i = 0; i < data.length; i++) {
+								var tableNum = i + 1;
+								var person = data[i];
 
-							$("#tableSelection").append(`<div class="well" id="tableWell-${(tableNum > 9) ? tableNum : "0" + tableNum.toString()}"><h2><span class="label label-primary">${tableNum}</span> | ${person.customerName}</h2></div>`);
+								$("#tableSelection").append(`<div class="well" id="tableWell-${(tableNum > 9) ? tableNum : "0" + tableNum.toString()}"><h2><span class="label label-primary">${tableNum}</span> | ${person.customerName}</h2></div>`);
+							}
 						}
-					}
-				});
+					});
 
-			$.get(`api/waitlist`)
-				.then((data) => {
-					if (data && data.length) {
-						for (var i = 0; i < data.length; i++) {
-							var tableNum = i + 1;
-							var person = data[i];
+				$.get(`api/waitlist`)
+					.then((data) => {
+						if (data && data.length) {
+							for (var i = 0; i < data.length; i++) {
+								var tableNum = i + 1;
+								var person = data[i];
 
-							$("#waitlistSelection").append(`<div class="well" id="tableWell-${(tableNum > 9) ? tableNum : "0" + tableNum.toString()}"><h2><span class="label label-primary">${tableNum}</span> | ${person.customerName}</h2></div>`);
+								$("#waitlistSelection").append(`<div class="well" id="tableWell-${(tableNum > 9) ? tableNum : "0" + tableNum.toString()}"><h2><span class="label label-primary">${tableNum}</span> | ${person.customerName}</h2></div>`);
+							}
 						}
-					}
-				});
-		});
-	</script>
+					});
+			});
+		</script>
 </body>
 </html>
