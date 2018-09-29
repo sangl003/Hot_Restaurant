@@ -13,16 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Create a few array variables that will hold the data
-<<<<<<< HEAD
-var reservations = [{
-    name: "Ryan",
-    phone: "545-899-4546",
-    email: "ryan@test.com",
-    uniqueid: "1"
-
-}];
-var waitlist = [];
-=======
 var reservations = [
 	{
 		"customerName": "Oprah",
@@ -52,7 +42,6 @@ var waitlist = [
 		"phoneNumber": "505-555-5555"
 	}
 ];
->>>>>>> 0f658e2c0d675fc3be64867a135814d9b38660c4
 
 // Create a set of routes for getting and posting table data
 
@@ -75,7 +64,7 @@ app.get("/", function(req, res) {
 
 // Reserve
 app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "Reserve.html"));
+    res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 // Tables
@@ -84,12 +73,9 @@ app.get("/tables", function(req, res) {
 });
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-<<<<<<< HEAD
-=======
 
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT);
   });
->>>>>>> 0f658e2c0d675fc3be64867a135814d9b38660c4
