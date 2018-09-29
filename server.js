@@ -17,14 +17,21 @@ var reservations = [];
 var waitlist = [];
 
 // Create a set of routes for getting and posting table data
+
+// Basic route that sends the user first to the AJAX Page
+// /api/Tablesview
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "Tables.html"));
+  });
+
 // /api/reservations
+
+app.get("/reservations", function(req, res) {
+    res.sendFile(path.join(__dirname, "reservations.html"));
+  });
+
 // /api/waitlist
-<<<<<<< HEAD
-// Create a set of routes for displaying the HTML pages
-// Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-=======
 
 // Create a set of routes for displaying the HTML pages
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
->>>>>>> cbc9e057a7ca79a39ecb9f2252b3d99eb5b79b1c
