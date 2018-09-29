@@ -30,27 +30,12 @@ app.get("/api/reservations", function(req, res) {
 });
 
 // /api/waitlist
-<<<<<<< HEAD
-app.get("/waitlist", function(req, res) {
-    return res.json(waitlist);
-  });
-=======
 app.get("/api/waitlist", function(req, res) {
     res.json(waitlist);
 });
 
->>>>>>> b6885a1588b925c15cb2facda26fab2722631570
 // Create a set of routes for displaying the HTML pages
 
-<<<<<<< HEAD
-// Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-	console.log("App listening on PORT " + PORT);
-  });
-=======
 // Home
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
@@ -67,4 +52,3 @@ app.get("/tables", function(req, res) {
 });
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
->>>>>>> b6885a1588b925c15cb2facda26fab2722631570
