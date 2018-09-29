@@ -24,26 +24,25 @@ var waitlist = [];
 
 // Create a set of routes for getting and posting table data
 
-// Basic route that sends the user first to the AJAX Page
-// /api/Tablesview
-app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "Tables.html"));
-  });
-
 // /api/reservations
-
-app.get("/reservations", function(req, res) {
-    res.sendFile(path.join(__dirname, "reservations.html"));
-  });
+app.get("/api/reservations", function(req, res) {
+    res.json(reservations);
+});
 
 // /api/waitlist
+<<<<<<< HEAD
 app.get("/waitlist", function(req, res) {
     return res.json(waitlist);
   });
-// Create a set of routes for displaying the HTML pages
-// /reserve
-// /tables
+=======
+app.get("/api/waitlist", function(req, res) {
+    res.json(waitlist);
+});
 
+>>>>>>> b6885a1588b925c15cb2facda26fab2722631570
+// Create a set of routes for displaying the HTML pages
+
+<<<<<<< HEAD
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
 
 // Starts the server to begin listening
@@ -51,3 +50,21 @@ app.get("/waitlist", function(req, res) {
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT);
   });
+=======
+// Home
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Reserve
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "Reserve.html"));
+});
+
+// Tables
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "Tables.html"));
+});
+
+// Use jQuery to run AJAX calls to GET and POST data from users to the Express server
+>>>>>>> b6885a1588b925c15cb2facda26fab2722631570
