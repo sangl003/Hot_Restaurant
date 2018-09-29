@@ -74,17 +74,24 @@ app.get("/tables", function(req, res) {
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
 
+// Displays all reservation
+    app.get("/tables", function(req, res) {     
+
+    return res.json(reservations[i]);
+
+  });
+
 // Create New reservation - takes in JSON input
 app.post("/reserve", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
-    var newreservation= req.body;
+    var newReservation= req.body;
    
-    console.log(newreservation);
+    console.log(newReservation);
   
-    characters.push(newreservation);
+    characters.push(newReservation);
   
-    res.json(newreservation);
+    res.json(newReservation);
   });
 
 // Starts the server to begin listening
