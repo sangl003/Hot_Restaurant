@@ -77,7 +77,7 @@ app.post("/api/reservations", function(req, res) {
     }
     else{
         console.log("Sorry you are on the wait list");
-        reservations.push(waitlist);
+        waitlist.push(newReservation);
         //res.json(waitlist);
     }
   
