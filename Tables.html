@@ -27,17 +27,39 @@
 			</div>
 		</div>
 
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Current Reservations</h3>
+			</div>
+			<div class="panel-body" id="tableSelection"></div>
+		</div>
 
-</div>
 
+	</div>
 
-<footer class="footer">
-  <div class="container">
-    <p><a href="/api/reservations">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
-  </div>
-</footer>
+	<footer class="footer">
+		<div class="container">
+			<p><a href="/api/reservations">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+		</div>
+	</footer>
 
-<script type="text/javascript">
-</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// get reservation and waitlist data
+
+			$.get(`api/reservations`)
+				.then((data) => {
+					if (data && data.length) {
+						for (var i = 0; i < data.length; i++) {
+							addRow(i, data[i]);
+						}
+					}
+				});
+		});
+
+		function addRow(tableNum, person) {
+			$("#tableSelection").append(`<div class="well" id="tableWell-${(tableNum > 9) ? tableNum : "0" + tableNum.toString()}"><h2><span class="label label-primary">${tableNum}</span> | ${person.customerName}</h2></div>`);
+		}
+	</script>
 </body>
 </html>
