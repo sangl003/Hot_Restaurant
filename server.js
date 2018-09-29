@@ -80,19 +80,12 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Tables
+// Tables // Displays all reservation
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "Tables.html"));
 });
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-
-// Displays all reservation
-    app.get("/tables", function(req, res) {     
-
-    return res.json(reservations[i]);
-
-  });
 
 // Create New reservation - takes in JSON input
 app.post("/reserve", function(req, res) {
@@ -106,6 +99,7 @@ app.post("/reserve", function(req, res) {
   
     res.json(newReservation);
   });
+
 
 // Starts the server to begin listening
 // =============================================================
