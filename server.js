@@ -21,5 +21,13 @@ var waitlist = [];
 // /api/waitlist
 
 // Create a set of routes for displaying the HTML pages
+// /reserve
+// /tables
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+	console.log("App listening on PORT " + PORT);
+  });
