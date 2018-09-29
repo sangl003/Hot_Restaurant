@@ -110,20 +110,20 @@
 		var currentURL = window.location.origin;
 
 		
-		$.post(currentURL + "/reserve/reservations", newReservation)
+		$.post(currentURL + "/api/reservations", newReservation)
 	    .then(function(data){
 
 			console.log(data);
 
 	    	// If a table is available... tell user they are booked.
-	    	// if(data == true){
-	    	// 	alert("Yay! You are officially booked!")
-	    	// }
+	    	if(data == true){
+	    		alert("Yay! You are officially booked!")
+	    	}
 
-	    	// // If a table is available... tell user they on the waiting list.
-	    	// if(data == false){
-	    	// 	alert("Sorry you are on the wait list")
-	    	// }
+	    	// If a table is available... tell user they on the waiting list.
+	    	if(data == false){
+	    		alert("Sorry you are on the wait list")
+	     }
 
 	    	// Clear the form when submitting
     		$('#reserve_name').val("");
