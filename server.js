@@ -33,5 +33,16 @@ app.get("/reservations", function(req, res) {
 // /api/waitlist
 
 // Create a set of routes for displaying the HTML pages
+// /reserve
+// /tables
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
+<<<<<<< HEAD
+=======
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+	console.log("App listening on PORT " + PORT);
+  });
+>>>>>>> 020da5b388dc9776f5da6faeea22ce6956ee37f2
