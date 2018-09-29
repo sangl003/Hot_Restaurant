@@ -55,19 +55,6 @@ app.get("/api/waitlist", function(req, res) {
     res.json(waitlist);
 });
 
-// Create reservation - takes in JSON input
-app.post("/api/reservations", function(req, res) {
-	// req.body hosts is equal to the JSON post sent from the user
-	// This works because of our body parsing middleware
-	var newReservation = req.body;
-  	// Using a RegEx Pattern to remove spaces from newCharacter
-	// You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-	// newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
-  	console.log(newReservation);
-  	reservations.push(newReservation);
-  	res.json(newcharacter);
-  });
-
 // Create a set of routes for displaying the HTML pages
 
 // Home
@@ -80,19 +67,12 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Tables
+// Tables // Displays all reservation
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "Tables.html"));
 });
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-
-// Displays all reservation
-    app.get("/tables", function(req, res) {     
-
-    return res.json(reservations[i]);
-
-  });
 
 // Create New reservation - takes in JSON input
 app.post("/reserve", function(req, res) {
@@ -106,6 +86,7 @@ app.post("/reserve", function(req, res) {
   
     res.json(newReservation);
   });
+
 
 // Starts the server to begin listening
 // =============================================================
