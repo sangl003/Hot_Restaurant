@@ -45,31 +45,31 @@ var waitlist = [
 
 // Create a set of routes for getting and posting table data
 
-// Basic route that sends the user first to the AJAX Page
-// /api/Tablesview
-app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "Tables.html"));
-  });
-
 // /api/reservations
-
-app.get("/reservations", function(req, res) {
-    res.sendFile(path.join(__dirname, "reservations.html"));
-  });
+app.get("/api/reservations", function(req, res) {
+    res.json(reservations);
+});
 
 // /api/waitlist
+app.get("/api/waitlist", function(req, res) {
+    res.json(waitlist);
+});
 
 // Create a set of routes for displaying the HTML pages
-// /reserve
-// /tables
+
+// Home
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Reserve
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "Reserve.html"));
+});
+
+// Tables
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "Tables.html"));
+});
 
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-<<<<<<< HEAD
-=======
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-	console.log("App listening on PORT " + PORT);
-  });
->>>>>>> 020da5b388dc9776f5da6faeea22ce6956ee37f2
