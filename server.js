@@ -65,10 +65,12 @@ app.post("/api/reservations", function(req, res) {
 	// newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
       console.log(newReservation);
     if (reservations.length > 5){
+        alert("Sorry you are on the wait list")
         reservations.push(waitlist);
         res.json(waitlist);
     }
     else{
+        alert("Yay! You are officially booked!")
         reservations.push(newReservation);
         res.json(newReservation);
     }
