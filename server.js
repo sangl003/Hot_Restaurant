@@ -57,22 +57,25 @@ app.get("/api/waitlist", function(req, res) {
 
 // Create reservation - takes in JSON input
 app.post("/api/reservations", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body parsing middleware
-    var newReservation = req.body;
-     // Using a RegEx Pattern to remove spaces from newCharacter
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
-     console.log(newReservation);
-   if (reservations.length > 5){
-       reservations.push(waitlist);
-       res.json(waitlist);
-   }
-   else{
-       reservations.push(newReservation);
-       res.json(newReservation);
-   }
- });
+	// req.body hosts is equal to the JSON post sent from the user
+	// This works because of our body parsing middleware
+	var newReservation = req.body;
+  	// Using a RegEx Pattern to remove spaces from newCharacter
+	// You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+	// newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+      console.log(newReservation);
+    if (reservations.length > 5){
+        alert("Sorry you are on the wait list")
+        reservations.push(waitlist);
+        res.json(waitlist);
+    }
+    else{
+        alert("Yay! You are officially booked!")
+        reservations.push(newReservation);
+        res.json(newReservation);
+    }
+  
+  });
 
 // Create a set of routes for displaying the HTML pages
 
