@@ -13,8 +13,35 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Create a few array variables that will hold the data
-var reservations = [];
-var waitlist = [];
+var reservations = [
+	{
+		"customerName": "Oprah",
+		"customerEmail": "harpo@dynamix.biz",
+		"customerID": "OoOoO",
+		"phoneNumber": "505-555-5555"
+	},
+	{
+		"customerName": "Horace",
+		"customerEmail": "hdogg@professionalbasketball.tv",
+		"customerID": "hdogg",
+		"phoneNumber": "505-555-5555"
+	}
+];
+
+var waitlist = [
+	{
+		"customerName": "Jeffney Drangus",
+		"customerEmail": "hunk@channelfive.com",
+		"customerID": "JEFF",
+		"phoneNumber": "505-555-5555"
+	},
+	{
+		"customerName": "Lola X",
+		"customerEmail": "secretspy@unitedstates.gov",
+		"customerID": "Agent L",
+		"phoneNumber": "505-555-5555"
+	}
+];
 
 // Create a set of routes for getting and posting table data
 // /api/reservations
