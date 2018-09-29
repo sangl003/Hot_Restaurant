@@ -100,10 +100,7 @@ app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "Tables.html"));
 });
 
-// Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-
 // Starts the server to begin listening
-// =============================================================
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT);
   });
