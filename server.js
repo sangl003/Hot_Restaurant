@@ -64,15 +64,21 @@ app.post("/api/reservations", function(req, res) {
 	// You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
 	// newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
       console.log(newReservation);
-    if (reservations.length > 5){
-        alert("Sorry you are on the wait list")
-        reservations.push(waitlist);
-        res.json(waitlist);
+
+      console.log(reservations.length);
+      
+    if (reservations.length < 4 ){
+
+        console.log("Yay! You are officially booked!");
+        reservations.push(newReservation);
+        console.log(reservations.length);
+        res.json(newReservation);
+    
     }
     else{
-        alert("Yay! You are officially booked!")
-        reservations.push(newReservation);
-        res.json(newReservation);
+        console.log("Sorry you are on the wait list");
+        reservations.push(waitlist);
+        //res.json(waitlist);
     }
   
   });
