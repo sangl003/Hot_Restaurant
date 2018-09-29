@@ -65,7 +65,7 @@ app.post("/api/reservations", function(req, res) {
 	// newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
   	console.log(newReservation);
   	reservations.push(newReservation);
-  	res.json(newcharacter);
+  	res.json(newReservation);
   });
 
 // Create a set of routes for displaying the HTML pages
