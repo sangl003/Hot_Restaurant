@@ -19,10 +19,4 @@ var waitlist = [];
 // /api/reservations
 // /api/waitlist
 // Create a set of routes for displaying the HTML pages
-<<<<<<< HEAD
 // Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-=======
-// Use jQuery to run AJAX calls to GET and POST data from users to the Express server
-
-
->>>>>>> 2035c9bda8c9b8b3b0364f46c1a7b229095c4d3d
